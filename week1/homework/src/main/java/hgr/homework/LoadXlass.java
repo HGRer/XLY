@@ -8,7 +8,7 @@ public class LoadXlass extends ClassLoader {
 		try (InputStream is = LoadXlass.class.getClassLoader().getResourceAsStream("Hello.xlass");) {
 			// load file
 			if (is == null) {
-				System.out.println("is -> null ");
+				System.out.println("is -> null");
 				return;
 			}
 			byte[] byteArray = new byte[1024];
