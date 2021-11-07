@@ -1,0 +1,248 @@
+  public Hello();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 1: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LHello;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=3, args_size=1
+         0: iconst_3
+         1: newarray       int
+         3: dup
+         4: iconst_0
+         5: iconst_1
+         6: iastore
+         7: dup
+         8: iconst_1
+         9: iconst_2
+        10: iastore
+        11: dup
+        12: iconst_2
+        13: iconst_3
+        14: iastore
+        15: astore_1
+        16: new           #2                  // class Hello
+        19: dup
+        20: invokespecial #3                  // Method "<init>":()V
+        23: astore_2
+        24: aload_2
+        25: aload_1
+        26: invokevirtual #4                  // Method addition:([I)V
+        29: aload_1
+        30: invokestatic  #5                  // Method subtraction:([I)V
+        33: invokestatic  #6                  // Method multiplication:()V
+        36: invokestatic  #7                  // Method division:()V
+        39: return
+      LineNumberTable:
+        line 4: 0
+        line 6: 16
+        line 7: 24
+        line 9: 29
+        line 11: 33
+        line 13: 36
+        line 14: 39
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      40     0  args   [Ljava/lang/String;
+           16      24     1 intArray   [I
+           24      16     2 hello   LHello;
+
+  public void addition(int[]);
+    descriptor: ([I)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=7, args_size=2
+         0: iconst_0
+         1: istore_2
+         2: aload_1
+         3: astore_3
+         4: aload_3
+         5: arraylength
+         6: istore        4
+         8: iconst_0
+         9: istore        5
+        11: iload         5
+        13: iload         4
+        15: if_icmpge     35
+        18: aload_3
+        19: iload         5
+        21: iaload
+        22: istore        6
+        24: iload_2
+        25: iload         6
+        27: iadd
+        28: istore_2
+        29: iinc          5, 1
+        32: goto          11
+        35: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        38: new           #9                  // class java/lang/StringBuilder
+        41: dup
+        42: invokespecial #10                 // Method java/lang/StringBuilder."<init>":()V
+        45: ldc           #11                 // String addition ->
+        47: invokevirtual #12                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        50: iload_2
+        51: invokevirtual #13                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        54: invokevirtual #14                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        57: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        60: return
+      LineNumberTable:
+        line 17: 0
+        line 18: 2
+        line 19: 24
+        line 18: 29
+        line 21: 35
+        line 22: 60
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           24       5     6     i   I
+            0      61     0  this   LHello;
+            0      61     1 intArray   [I
+            2      59     2 count   I
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 11
+          locals = [ class Hello, class "[I", int, class "[I", int, int ]
+          stack = []
+        frame_type = 248 /* chop */
+          offset_delta = 23
+
+  public static void subtraction(int[]);
+    descriptor: ([I)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=3, args_size=1
+         0: aload_0
+         1: ifnonnull     13
+         4: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         7: ldc           #16                 // String intArray -> null
+         9: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        12: return
+        13: bipush        20
+        15: istore_1
+        16: iconst_0
+        17: istore_2
+        18: iload_2
+        19: aload_0
+        20: arraylength
+        21: if_icmpge     36
+        24: iload_1
+        25: aload_0
+        26: iload_2
+        27: iaload
+        28: isub
+        29: istore_1
+        30: iinc          2, 1
+        33: goto          18
+        36: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        39: new           #9                  // class java/lang/StringBuilder
+        42: dup
+        43: invokespecial #10                 // Method java/lang/StringBuilder."<init>":()V
+        46: ldc           #17                 // String subtraction ->
+        48: invokevirtual #12                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        51: iload_1
+        52: invokevirtual #13                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        55: invokevirtual #14                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        58: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        61: return
+      LineNumberTable:
+        line 25: 0
+        line 26: 4
+        line 27: 12
+        line 29: 13
+        line 30: 16
+        line 31: 24
+        line 30: 30
+        line 33: 36
+        line 34: 61
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           18      18     2     i   I
+            0      62     0 intArray   [I
+           16      46     1 origin   I
+      StackMapTable: number_of_entries = 3
+        frame_type = 13 /* same */
+        frame_type = 253 /* append */
+          offset_delta = 4
+          locals = [ int, int ]
+        frame_type = 250 /* chop */
+          offset_delta = 17
+
+  public static void multiplication();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=2, args_size=0
+         0: bipush        10
+         2: istore_0
+         3: sipush        256
+         6: istore_1
+         7: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        10: new           #9                  // class java/lang/StringBuilder
+        13: dup
+        14: invokespecial #10                 // Method java/lang/StringBuilder."<init>":()V
+        17: ldc           #18                 // String multiplication ->
+        19: invokevirtual #12                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        22: iload_0
+        23: iload_1
+        24: imul
+        25: invokevirtual #13                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        28: invokevirtual #14                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        31: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        34: return
+      LineNumberTable:
+        line 37: 0
+        line 38: 3
+        line 39: 7
+        line 40: 34
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            3      32     0     a   I
+            7      28     1     b   I
+
+  public static void division();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=2, args_size=0
+         0: bipush        10
+         2: invokestatic  #19                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+         5: astore_0
+         6: sipush        300
+         9: invokestatic  #19                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        12: astore_1
+        13: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        16: new           #9                  // class java/lang/StringBuilder
+        19: dup
+        20: invokespecial #10                 // Method java/lang/StringBuilder."<init>":()V
+        23: ldc           #20                 // String division ->
+        25: invokevirtual #12                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        28: aload_1
+        29: invokevirtual #21                 // Method java/lang/Integer.intValue:()I
+        32: aload_0
+        33: invokevirtual #21                 // Method java/lang/Integer.intValue:()I
+        36: idiv
+        37: invokevirtual #13                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        40: invokevirtual #14                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        43: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        46: return
+      LineNumberTable:
+        line 43: 0
+        line 44: 6
+        line 45: 13
+        line 46: 46
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            6      41     0     a   Ljava/lang/Integer;
+           13      34     1     b   Ljava/lang/Integer;
+}
