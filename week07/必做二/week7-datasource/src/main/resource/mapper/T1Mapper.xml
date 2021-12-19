@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="homework.week7_datasource.mapper.master.T1Mapper">
+	
+	<insert id="insert" parameterType="homework.week7_datasource.entity.T1">
+		insert into t1(id)
+		values (
+		#{id,jdbcType=BIGINT})
+	</insert>
+</mapper>
