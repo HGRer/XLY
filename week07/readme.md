@@ -92,6 +92,6 @@ update_time:null
 
 **当然我个人经验来说是我的代码出问题/少配置之类的，望老师可以解答下**。
 
-![5.0.0](\image\5.0.0.png)
+![5.0.0](/image/5.0.0.png)
 
-![alpha](\image\alpha.png)
+![alpha](/image/alpha.png)
