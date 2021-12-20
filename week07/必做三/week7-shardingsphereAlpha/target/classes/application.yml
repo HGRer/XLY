@@ -1,0 +1,30 @@
+spring:
+  shardingsphere:
+    props:
+      sql-show: false
+    
+    datasource:
+      names: ds0
+      common:
+        type: com.zaxxer.hikari.HikariDataSource
+      ds0:
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/db?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+    rules:
+      replica-query:
+        load-balancers:
+
+          round-robin:
+            type: ROUND_ROBIN
+            props:
+              default: 0
+        data-sources:
+          prds:
+            primary-data-source-name: ds0
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml

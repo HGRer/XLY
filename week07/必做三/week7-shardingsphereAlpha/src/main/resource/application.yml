@@ -1,0 +1,37 @@
+spring:
+  shardingsphere:
+    props:
+      sql-show: false
+    
+    datasource:
+      names: ds0,ds1
+      common:
+        type: com.zaxxer.hikari.HikariDataSource
+      ds0:
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/db?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+      ds1:
+        jdbc-url: jdbc:mysql://127.0.0.1:3307/db?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    rules:
+      replica-query:
+        load-balancers:
+
+          round-robin:
+            type: ROUND_ROBIN
+            props:
+              default: 0
+        data-sources:
+          prds:
+            primary-data-source-name: ds0
+            # 从库
+            replica-data-source-names: ds1
+            load-balancer-name: round_robin
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
