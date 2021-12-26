@@ -24,9 +24,9 @@
 -订单历史表 ORDER_REQUEST_HIST
 -订单业务表拆表原则：都使用order_request_id进行拆分。偶数库分为0，2，4，6，8；奇数库分为1，3，5，7，9
 
-![3306库表](https://github.com/HGRer/XLY/tree/master/week08/image/3306_tables.png)
+![3306库表](https://github.com/HGRer/XLY/blob/master/week08/image/3306_tables.png)
 
-![3307库表](https://github.com/HGRer/XLY/tree/master/week08/image/3307_tables.png)
+![3307库表](https://github.com/HGRer/XLY/blob/master/week08/image/3307_tables.png)
 
 #### 开发思路：
 
